@@ -42,7 +42,7 @@ public class BlogPostController {
 
     // 4. PUT (+ {id}) (+ body)
     @PutMapping("/{id}")
-    public BlogPost findByIdAndUpdate(@PathVariable int id, @RequestBody BlogPost updatedPost) {
+    public BlogPost findByIdAndUpdate(@PathVariable UUID id, @RequestBody BlogPost updatedPost) {
         return this.blogPostService.findByIdAndUpdate(id, updatedPost);
     }
 
@@ -50,7 +50,7 @@ public class BlogPostController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     //NO_CONTENT = Status Code 204
-    public void findByIdAndDelete(@PathVariable int id) {
+    public void findByIdAndDelete(@PathVariable UUID id) {
         this.blogPostService.findByIdAndDelete(id);
     }
 }
